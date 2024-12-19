@@ -1,7 +1,11 @@
+package com.catalisa.biblioteca;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Biblioteca biblioteca = new Biblioteca();
+        Livro livro = new Livro("","","",true);
         Scanner leitura = new Scanner(System.in);
         int opcao = 0;
         System.out.println(" Bem-vindo ao Sistema de Gerenciamento de Biblioteca!");
@@ -11,7 +15,7 @@ public class Main {
             opcao = leitura.nextInt();
             switch (opcao) {
                 case 1:
-                    System.out.println("Cadastrar livro.");
+                    biblioteca.cadastrarLivro(livro);
                     break;
                 case 2:
                     System.out.println("Cadastrar usuário.");
