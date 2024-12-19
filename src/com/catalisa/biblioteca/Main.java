@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Biblioteca biblioteca = new Biblioteca();
-        Livro livro = new Livro("","","",true);
         Scanner leitura = new Scanner(System.in);
         int opcao = 0;
         System.out.println(" Bem-vindo ao Sistema de Gerenciamento de Biblioteca!");
@@ -15,6 +14,14 @@ public class Main {
             opcao = leitura.nextInt();
             switch (opcao) {
                 case 1:
+                    System.out.println("### CADASTRO DE LIVRO ###");
+                    System.out.println("Digite o título do livro: ");
+                    String titulo = leitura.next();
+                    System.out.println("Digite o autor do livro: ");
+                    String autor = leitura.next();
+                    System.out.println("ISBN do livro: ");
+                    String isbn = leitura.next();
+                    Livro livro = new Livro(titulo, autor, isbn, true);
                     biblioteca.cadastrarLivro(livro);
                     break;
                 case 2:
