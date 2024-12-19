@@ -1,4 +1,4 @@
-package com.catalisa.gerenciador.de.bibliotecas.livros;
+package com.catalisa.biblioteca;
 
 public class Livro {
     //atributos
@@ -14,8 +14,43 @@ public class Livro {
         this.isbn = isbn;
         this.disponivel = disponivel;
     }
+    //get e set
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
+    }
+
 
     //metodos
+
     public void exibirDetalhes() {
 
     }
@@ -26,5 +61,14 @@ public class Livro {
 
     public void devolver() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Livro {" +
+                "\n  Título: " + titulo +
+                "\n  Autor: " + autor +
+                "\n  ISBN: " + isbn +
+                "\n}";
     }
 }
