@@ -1,3 +1,5 @@
+package com.catalisa.gerenciador.de.bibliotecas.livros;
+
 public class Livro {
     //atributos
     private String titulo;
