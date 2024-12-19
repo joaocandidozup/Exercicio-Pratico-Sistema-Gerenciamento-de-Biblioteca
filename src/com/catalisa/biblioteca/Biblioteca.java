@@ -18,8 +18,12 @@ public class Biblioteca {
     //metodos
     protected void cadastrarLivro(Livro livro) {
         livros.add(livro);
-        System.out.println("Livro ("+livro.getTitulo() + ") Cadastrado com sucesso!");
+        System.out.println("Livro (" + livro.getTitulo() + ") Cadastrado com sucesso!");
     }
 
+    protected void cadastrarUsuario(Usuario usuario) {
+        usuarios.add(usuario);
+        System.out.println("Usuario (" + usuario.getNome() + ") Cadastrado com sucesso!");
+    }
 
 }

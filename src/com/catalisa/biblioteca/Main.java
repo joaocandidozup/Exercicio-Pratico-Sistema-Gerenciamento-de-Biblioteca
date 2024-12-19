@@ -25,7 +25,13 @@ public class Main {
                     biblioteca.cadastrarLivro(livro);
                     break;
                 case 2:
-                    System.out.println("Cadastrar usuário.");
+                    System.out.println("### CADASTRO DE USUARIO ###");
+                    System.out.println("Digite o nome do usuário:");
+                    String nome = leitura.next();
+                    System.out.println("Digite o ID do usuário: ");
+                    int id = leitura.nextInt();
+                    Usuario usuario = new Usuario(nome,id);
+                    biblioteca.cadastrarUsuario(usuario);
                     break;
                 case 3:
                     System.out.println("Realizar empréstimo.");
