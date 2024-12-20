@@ -1,4 +1,8 @@
-package com.catalisa.biblioteca;
+package com.catalisa;
+
+import com.catalisa.biblioteca.Biblioteca;
+import com.catalisa.biblioteca.Livro;
+import com.catalisa.biblioteca.Usuario;
 
 import java.util.Scanner;
 
@@ -30,17 +34,22 @@ public class Main {
                     String nome = leitura.next();
                     System.out.println("Digite o ID do usuário: ");
                     int id = leitura.nextInt();
-                    Usuario usuario = new Usuario(nome,id);
+                    Usuario usuario = new Usuario(nome, id);
                     biblioteca.cadastrarUsuario(usuario);
                     break;
                 case 3:
-                    System.out.println("Realizar empréstimo.");
+                    System.out.println("### REALIZAR UM EMPRESTIMO ###");
+                    System.out.println("Digite o ISBN do livro: ");
+                    isbn = leitura.next();
+                    System.out.println("Digite o ID do usuario: ");
+                    id = leitura.nextInt();
+                    biblioteca.realizarEmprestimo(isbn, id);
                     break;
                 case 4:
                     System.out.println("Realizar devolução.");
                     break;
                 case 5:
-                    System.out.println("Exibir livros disponíveis.");
+                    biblioteca.exibirLivrosDisponiveis();
                     break;
                 default:
                     System.out.println("Saindo da aplicação....");

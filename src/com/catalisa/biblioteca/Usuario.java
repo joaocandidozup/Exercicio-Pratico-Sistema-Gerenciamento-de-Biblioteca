@@ -9,11 +9,17 @@ public class Usuario {
     private ArrayList<Livro> livrosEmprestados;
 
     //construtor
-    public Usuario(String nome,int id){
+    public Usuario(String nome, int id) {
         this.nome = nome;
         this.id = id;
+        this.livrosEmprestados = new ArrayList<Livro>();
 
     }
+
+    public Usuario() {
+
+    }
+
     public String getNome() {
         return nome;
     }
@@ -39,21 +45,24 @@ public class Usuario {
     }
 
     //construtor
-    public Usuario(String nome,int id,ArrayList<Livro>livrosEmprestados){
+    public Usuario(String nome, int id, ArrayList<Livro> livrosEmprestados) {
         this.nome = nome;
         this.id = id;
         this.livrosEmprestados = livrosEmprestados;
-    //get e set
+        //get e set
 
     }
+
     //metodos
-    public void exibirDetalhes(){
-
+    public void exibirDetalhes(Livro livro) {
+        System.out.println(livro);
     }
-    public void adicionarLivro(Livro livro){
 
+    public void adicionarLivro(Livro livro) {
+        livrosEmprestados.add(livro);
     }
-    public void removerLivro(Livro livro){
 
+    public void removerLivro(Livro livro) {
+        livrosEmprestados.remove(livro);
     }
 }

@@ -51,16 +51,17 @@ public class Livro {
 
     //metodos
 
-    public void exibirDetalhes() {
+    public void exibirDetalhes(Livro livro) {
+        System.out.println(livro);
 
     }
 
-    public void emprestar() {
-
+    public void emprestar(Livro livro) {
+        disponivel = false;
     }
 
-    public void devolver() {
-
+    public void devolver(Livro livro) {
+        disponivel = true;
     }
 
     @Override

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectStateService">
+    <option name="data">
+      <map>
+        <entry key="joao.candido@zup.com.br">
+          <value>
+            <ProjectStateData>
+              <option name="indexedFiles">
+                <map>
+                  <entry key="$PROJECT_DIR$/.idea/stackspot_ai_project_state.xml" value="609" />
+                  <entry key="$PROJECT_DIR$/.idea/workspace.xml" value="616" />
+                  <entry key="$PROJECT_DIR$/src/com/catalisa/biblioteca/Biblioteca.java" value="62038" />
+                  <entry key="$PROJECT_DIR$/src/com/catalisa/biblioteca/Main.java" value="32791" />
+                  <entry key="$PROJECT_DIR$/src/com/catalisa/biblioteca/Usuario.java" value="29597" />
+                </map>
+              </option>
+              <option name="projectId" value="01JFG2A3CBNTZJ0WRED540W4ES" />
+            </ProjectStateData>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
