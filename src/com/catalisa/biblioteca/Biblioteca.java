@@ -54,6 +54,28 @@ public class Biblioteca {
         }
     }
 
+    public void realizarDevolucao(String isbn, int idUsuario) {
+        Livro livro = encontrarLivroEmprestadoPorIsbn(isbn);
+        Usuario usuario = encontrarUsuarioPorId(idUsuario);
+
+        if (livro == null) {
+            System.out.println("Livro não encontrado!");
+            return;
+        }
+
+        if (usuario == null) {
+            System.out.println("Usuário não encontrado!");
+            return;
+        }
+
+        if (!livro.isDisponivel()) {
+            usuario.exibirDetalhes(livro);
+            usuario.removerLivro(livro);
+            livros.add(livro);
+            livro.devolver();
+        }
+    }
+
     public void exibirLivrosDisponiveis() {
         for (Livro livro : livros) {
             livro.exibirDetalhes(livro);
@@ -71,6 +93,16 @@ public class Biblioteca {
         for (Usuario usuario : usuarios) {
             if (usuario.getId() == id) {
                 return usuario;
+            }
+        }
+        return null;
+    }
+    private Livro encontrarLivroEmprestadoPorIsbn(String isbn) {
+        for (Usuario usuario : usuarios) {
+            for (Livro livro : usuario.getLivrosEmprestados()) {
+                if (livro.getIsbn().equals(isbn)) {
+                    return livro;
+                }
             }
         }
         return null;

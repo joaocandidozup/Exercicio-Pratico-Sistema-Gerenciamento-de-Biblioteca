@@ -46,7 +46,12 @@ public class Main {
                     biblioteca.realizarEmprestimo(isbn, id);
                     break;
                 case 4:
-                    System.out.println("Realizar devolução.");
+                    System.out.println("### REALIZAR DEVOLUÇÃO DO LIVRO ###");
+                    System.out.println("Digite o ISBN do livro: ");
+                    isbn = leitura.next();
+                    System.out.println("Digite o ID do usuario: ");
+                    id = leitura.nextInt();
+                    biblioteca.realizarDevolucao(isbn,id);
                     break;
                 case 5:
                     biblioteca.exibirLivrosDisponiveis();
