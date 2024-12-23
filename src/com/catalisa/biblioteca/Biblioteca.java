@@ -25,33 +25,54 @@ public class Biblioteca {
     }
 
     public void realizarEmprestimo(String isbn, int idUsuario) {
-        for (Usuario usuario : usuarios) {
-            if (usuario.getLivrosEmprestados().size() < 4) {
-                if (usuario.getId() == idUsuario) {
-                    for (Livro livro : livros) {
-                        if (livro.getIsbn().equals(isbn)) {
-                            usuario.adicionarLivro(livro);
-                            System.out.println(" livro adicionado com sucesso");
-                            livros.remove(livro);
-                            System.out.println(usuario.getLivrosEmprestados());//debug
-                            break;
-                        } else {
-                            System.out.println("Livro não cadastrado");
-                        }
-                    }
-                } else {
-                    System.out.println("Usuario não cadastrado!");
-                }
-            } else {
-                System.out.println("Voçê alcançou o limite de livros que pode ser emprestado!!!");
-            }
+        Livro livro = encontrarLivroPorIsbn(isbn);
+        Usuario usuario = encontrarUsuarioPorId(idUsuario);
+
+        if (livro == null) {
+            System.out.println("Livro não encontrado!   ");
+            return;
         }
 
+        if (usuario == null) {
+            System.out.println("Usuário não encontrado!");
+            return;
+        }
+
+        if (usuario.getLivrosEmprestados().size() == 3) {
+            System.out.println("Usuario ja pegou 3 livros enprestados!");
+            return;
+        }
+
+        if (!livro.isDisponivel()) {
+            System.out.println("Livro já está emprestado!");
+
+        } else {
+            livros.remove(livro);
+            usuario.adicionarLivro(livro);
+            usuario.exibirDetalhes(livro);
+            livro.emprestar();
+        }
     }
 
     public void exibirLivrosDisponiveis() {
         for (Livro livro : livros) {
             livro.exibirDetalhes(livro);
         }
+    }
+    private Livro encontrarLivroPorIsbn(String isbn) {
+        for (Livro livro : livros) {
+            if (livro.getIsbn().equals(isbn)) {
+                return livro;
+            }
+        }
+        return null;
+    }
+    private Usuario encontrarUsuarioPorId(int id) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getId() == id) {
+                return usuario;
+            }
+        }
+        return null;
     }
 }
