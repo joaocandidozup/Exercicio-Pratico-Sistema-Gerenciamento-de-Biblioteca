@@ -1,4 +1,6 @@
-package com.catalisa.biblioteca;
+package com.catalisa.usuario;
+
+import com.catalisa.biblioteca.Livro;
 
 import java.util.ArrayList;
 

@@ -2,7 +2,7 @@ package com.catalisa;
 
 import com.catalisa.biblioteca.Biblioteca;
 import com.catalisa.biblioteca.Livro;
-import com.catalisa.biblioteca.Usuario;
+import com.catalisa.usuario.Usuario;
 
 import java.util.Scanner;
 

@@ -1,5 +1,7 @@
 package com.catalisa.biblioteca;
 
+import com.catalisa.usuario.Usuario;
+
 import java.util.ArrayList;
 
 public class Biblioteca {
