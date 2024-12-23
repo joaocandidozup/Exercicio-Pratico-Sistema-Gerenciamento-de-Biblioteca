@@ -16,22 +16,25 @@ public class Main {
             exibeMenu();
             System.out.println("Digite uma opcao: ");
             opcao = leitura.nextInt();
+
             switch (opcao) {
                 case 1:
                     System.out.println("### CADASTRO DE LIVRO ###");
                     System.out.println("Digite o título do livro: ");
-                    String titulo = leitura.next();
+                    leitura.nextLine();
+                    String titulo = leitura.nextLine();
                     System.out.println("Digite o autor do livro: ");
-                    String autor = leitura.next();
+                    String autor = leitura.nextLine();
                     System.out.println("ISBN do livro: ");
-                    String isbn = leitura.next();
+                    String isbn = leitura.nextLine();
                     Livro livro = new Livro(titulo, autor, isbn, true);
                     biblioteca.cadastrarLivro(livro);
                     break;
                 case 2:
                     System.out.println("### CADASTRO DE USUARIO ###");
                     System.out.println("Digite o nome do usuário:");
-                    String nome = leitura.next();
+                    leitura.nextLine();
+                    String nome = leitura.nextLine();
                     System.out.println("Digite o ID do usuário: ");
                     int id = leitura.nextInt();
                     Usuario usuario = new Usuario(nome, id);
@@ -51,7 +54,7 @@ public class Main {
                     isbn = leitura.next();
                     System.out.println("Digite o ID do usuario: ");
                     id = leitura.nextInt();
-                    biblioteca.realizarDevolucao(isbn,id);
+                    biblioteca.realizarDevolucao(isbn, id);
                     break;
                 case 5:
                     biblioteca.exibirLivrosDisponiveis();
@@ -59,12 +62,9 @@ public class Main {
                 default:
                     System.out.println("Saindo da aplicação....");
                     break;
-
-
             }
         }
     }
-
 
     public static void exibeMenu() {
         String menu = """
@@ -78,4 +78,5 @@ public class Main {
                 """;
         System.out.println(menu);
     }
+
 }
