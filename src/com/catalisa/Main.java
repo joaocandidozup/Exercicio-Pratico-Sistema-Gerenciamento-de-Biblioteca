@@ -15,9 +15,16 @@ public class Main {
         while (opcao != 6) {
             exibeMenu();
             System.out.println("Digite uma opcao: ");
-            opcao = leitura.nextInt();
-
+            try {
+                opcao = leitura.nextInt();
+            }catch (Exception e){
+                System.err.println("Digite somente numeros inteiros: " + e.getMessage());
+                leitura.next();
+                opcao = 0;
+            }
             switch (opcao) {
+                case 0:
+                    break;
                 case 1:
                     System.out.println("### CADASTRO DE LIVRO ###");
                     System.out.println("Digite o título do livro: ");
@@ -36,25 +43,37 @@ public class Main {
                     leitura.nextLine();
                     String nome = leitura.nextLine();
                     System.out.println("Digite o ID do usuário: ");
-                    int id = leitura.nextInt();
-                    Usuario usuario = new Usuario(nome, id);
-                    biblioteca.cadastrarUsuario(usuario);
+                    try {
+                        int id = leitura.nextInt();
+                        Usuario usuario = new Usuario(nome, id);
+                        biblioteca.cadastrarUsuario(usuario);
+                    }catch (Exception e){
+                        System.err.println("Digite somente numeros inteiros: " + e.getMessage());
+                    }
                     break;
                 case 3:
                     System.out.println("### REALIZAR UM EMPRESTIMO ###");
                     System.out.println("Digite o ISBN do livro: ");
                     isbn = leitura.next();
                     System.out.println("Digite o ID do usuario: ");
-                    id = leitura.nextInt();
-                    biblioteca.realizarEmprestimo(isbn, id);
+                    try {
+                      int id = leitura.nextInt();
+                        biblioteca.realizarEmprestimo(isbn, id);
+                    }catch (Exception e){
+                        System.err.println("Digite somente numeros inteiros: " + e.getMessage());
+                    }
                     break;
                 case 4:
                     System.out.println("### REALIZAR DEVOLUÇÃO DO LIVRO ###");
                     System.out.println("Digite o ISBN do livro: ");
                     isbn = leitura.next();
                     System.out.println("Digite o ID do usuario: ");
-                    id = leitura.nextInt();
-                    biblioteca.realizarDevolucao(isbn, id);
+                    try {
+                        int id = leitura.nextInt();
+                        biblioteca.realizarDevolucao(isbn, id);
+                    }catch (Exception e){
+                        System.err.println("Digite somente numeros inteiros: " + e.getMessage());
+                    }
                     break;
                 case 5:
                     biblioteca.exibirLivrosDisponiveis();
