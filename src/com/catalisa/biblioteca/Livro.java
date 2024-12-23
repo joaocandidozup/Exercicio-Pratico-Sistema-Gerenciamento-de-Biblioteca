@@ -1,6 +1,6 @@
 package com.catalisa.biblioteca;
 
-public class Livro {
+public class Livro implements IEmprestavel {
     private String titulo;
     private String autor;
     private String isbn;
@@ -25,7 +25,7 @@ public class Livro {
         System.out.println(livro);
 
     }
-
+    @Override
     public void emprestar() {
         if (disponivel) {
             disponivel = false;
@@ -34,7 +34,7 @@ public class Livro {
             System.out.println("Livro indisponível!");
         }
     }
-
+    @Override
     public void devolver() {
         disponivel = true;
         System.out.println("Livro devolvido!");
