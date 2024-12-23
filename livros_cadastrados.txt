@@ -1,0 +1,5 @@
+livro{titulo= Effective Java (3rd Edition), autor= Joshua Bloch, isbn= 1}
+livro{titulo= Java: The Complete Reference (12th Edition), autor= Herbert Schildt, isbn= 2}
+livro{titulo= Head First Java (2nd Edition), autor= Kathy Sierra e Bert Bates, isbn= 3}
+livro{titulo= Java Concurrency in Practice, autor= Brian Goetz, isbn= 4}
+
