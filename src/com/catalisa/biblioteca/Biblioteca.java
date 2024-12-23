@@ -2,6 +2,8 @@ package com.catalisa.biblioteca;
 
 import com.catalisa.usuario.Usuario;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Biblioteca {
@@ -16,12 +18,14 @@ public class Biblioteca {
     public void cadastrarLivro(Livro livro) {
         livros.add(livro);
         System.out.println("Livro cadastrado com sucesso!");
+        salvarObjetoEmArquivo(livro,"livros_cadastrados.txt");
     }
 
     public void cadastrarUsuario(Usuario usuario) {
         usuarios.add(usuario);
         System.out.println("Usuario Cadastrado com sucesso!");
         usuario.exibirDetalhes(usuario);
+        salvarObjetoEmArquivo(usuario,"usuarios_cadastrados.txt");
     }
 
     public void realizarEmprestimo(String isbn, int idUsuario) {
@@ -51,6 +55,7 @@ public class Biblioteca {
             usuario.adicionarLivro(livro);
             usuario.exibirDetalhes(livro);
             livro.emprestar();
+            salvarObjetoEmArquivo(livro,"livros_emprestados.txt");
         }
     }
 
@@ -106,5 +111,13 @@ public class Biblioteca {
             }
         }
         return null;
+    }
+    private static void salvarObjetoEmArquivo(Object objeto, String nomeArquivo) {
+        try (FileWriter writer = new FileWriter(nomeArquivo, true)) {
+            String linha = objeto.toString() + "\n";
+            writer.write(linha);
+        } catch (IOException e) {
+            System.err.println("Erro ao escrever no arquivo: " + e.getMessage());
+        }
     }
 }

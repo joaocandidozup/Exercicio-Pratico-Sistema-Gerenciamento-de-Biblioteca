@@ -49,6 +49,7 @@ public class Main {
                         biblioteca.cadastrarUsuario(usuario);
                     }catch (Exception e){
                         System.err.println("Digite somente numeros inteiros: " + e.getMessage());
+                        leitura.next();
                     }
                     break;
                 case 3:
@@ -61,6 +62,7 @@ public class Main {
                         biblioteca.realizarEmprestimo(isbn, id);
                     }catch (Exception e){
                         System.err.println("Digite somente numeros inteiros: " + e.getMessage());
+                        leitura.next();
                     }
                     break;
                 case 4:
@@ -73,6 +75,7 @@ public class Main {
                         biblioteca.realizarDevolucao(isbn, id);
                     }catch (Exception e){
                         System.err.println("Digite somente numeros inteiros: " + e.getMessage());
+                        leitura.next();
                     }
                     break;
                 case 5:
